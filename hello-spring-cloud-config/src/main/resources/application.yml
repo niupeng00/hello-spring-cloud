@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: hello-spring-cloud-config
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://gitee.com/niupeng00/spring-cloud-config.git
+          search-paths: respo
+          username: 365527950@QQ.com
+          password: niu19831221
+  boot:
+      admin:
+        client:
+          url: http://localhost:8084
+  zipkin:
+      base-url: http://localhost:9411
+
+server:
+  port: 8888  #默认就是8888 想改就得在bootstrap.properties中修改 优先加载bootstrap.properties
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
